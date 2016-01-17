@@ -1,0 +1,23 @@
+{
+  "name": "snapterest",
+  "version": "1.0.0",
+  "description": "The first React.js package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heimir-sverrisson/snapterest.git"
+  },
+  "keywords": [
+    "twitter",
+    "react"
+  ],
+  "author": "Heimir Thor Sverrisson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heimir-sverrisson/snapterest/issues"
+  },
+  "homepage": "https://github.com/heimir-sverrisson/snapterest#readme"
+}
