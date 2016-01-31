@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "description": "The first React.js package",
   "main": "index.js",
-  "scripts": {
-    "info": "echo 'npm as build tool' && exit 1",
-    "test": "echo 'Error: no real test specified' && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/heimir-sverrisson/snapterest.git"
@@ -35,6 +31,8 @@
     "react-dom": "^0.14.6"
   },
   "scripts": {
-    "lint": "eslint source/** build"
+    "lint": "eslint source/** build",
+    "info": "echo 'npm as build tool' && exit 0",
+    "test": "echo 'Error: no real test specified' && exit 0"
   }
 }
