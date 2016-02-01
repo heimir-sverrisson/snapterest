@@ -18941,21 +18941,33 @@ module.exports = require('./lib/React');
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var h1 = React.createElement("h1", {className: "header"}, "This is React");
-var p = React.createElement("p", {className: "content"}, "And that's how it works.");
+var ReactClass = React.createClass({
+  getInitialState: function() {
+    return { 
+      isHeaderHidden: false
+    };
+  },
 
-var listOfItems = React.createElement("ul", {className: "list-of-items"}, 
-                    React.createElement("li", {className: "item-1"}, "Item 1"), 
-                    React.createElement("li", {className: "item-2"}, "Item 2"), 
-                    React.createElement("li", {className: "item-3"}, "Item 3"), 
-                    React.createElement("li", {className: "item-4"}, "Item 4")
-		  );
+  handleClick: function() {
+    this.setState({isHeaderHidden: !this.state.isHeaderHidden});
+  },
+// See all events: http://facebook.github.io/react/docs/events.html#supported-events
 
-var reactFragment = [h1, p, listOfItems];
-var section = React.createElement('section', { className: 'container', 
-    key: 'container'}, reactFragment);
+  render: function() {
+    var title  = 'Stateful React Component';
+    var headerElement = React.createElement('h1', 
+      { className: 'header', key: 'header'}, title);
+    var buttonElement = React.createElement('button', 
+      { className: 'btn btn-default', onClick: this.handleClick, key: 'button'}, 'Toggle header');
+    if (this.state.isHeaderHidden) {
+      return React.createElement('div', null, [buttonElement]);
+    }
+      return React.createElement('div', null, [buttonElement, headerElement]);
+  }
+});
 
-ReactDOM.render(section, document.getElementById('react-application'));
+var reactComponentElement = React.createElement(ReactClass, {tweets: ['one','two']});
+var reactComponent = ReactDOM.render(reactComponentElement, document.getElementById('react-application'));
 
 },{"react":157,"react-dom":1}],159:[function(require,module,exports){
 // shim for using process in browser
